@@ -83,6 +83,85 @@
     setTimeout(updatePagination, 100);
   }
 
+    // ========== СЛАЙДЕР РАБОТ ==========
+  const worksSlider = document.getElementById('worksSlider');
+  const worksPrevBtn = document.getElementById('worksSliderPrev');
+  const worksNextBtn = document.getElementById('worksSliderNext');
+  const worksPagination = document.getElementById('worksSliderPagination');
+  
+  if (worksSlider && worksPrevBtn && worksNextBtn && worksPagination) {
+    const worksSlides = worksSlider.querySelectorAll('.work-slide');
+    const getWorksSlideWidth = () => worksSlides[0]?.offsetWidth + 20 || 0;
+    
+    function updateWorksPagination() {
+      const slideWidth = getWorksSlideWidth();
+      const activeIndex = Math.round(worksSlider.scrollLeft / slideWidth);
+      
+      worksPagination.innerHTML = '';
+      worksSlides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = `works-slider-dot${i === activeIndex ? ' active' : ''}`;
+        dot.addEventListener('click', () => worksSlider.scrollTo({ left: i * slideWidth, behavior: 'smooth' }));
+        worksPagination.appendChild(dot);
+      });
+    }
+    
+    worksPrevBtn.addEventListener('click', () => worksSlider.scrollBy({ left: -getWorksSlideWidth(), behavior: 'smooth' }));
+    worksNextBtn.addEventListener('click', () => worksSlider.scrollBy({ left: getWorksSlideWidth(), behavior: 'smooth' }));
+    worksSlider.addEventListener('scroll', updateWorksPagination);
+    window.addEventListener('resize', updateWorksPagination);
+    setTimeout(updateWorksPagination, 100);
+    
+    // Drag to scroll functionality
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+    
+    worksSlider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      worksSlider.classList.add('dragging');
+      startX = e.pageX - worksSlider.offsetLeft;
+      scrollLeft = worksSlider.scrollLeft;
+    });
+    
+    worksSlider.addEventListener('mouseleave', () => {
+      isDragging = false;
+      worksSlider.classList.remove('dragging');
+    });
+    
+    worksSlider.addEventListener('mouseup', () => {
+      isDragging = false;
+      worksSlider.classList.remove('dragging');
+    });
+    
+    worksSlider.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - worksSlider.offsetLeft;
+      const walk = (x - startX) * 2;
+      worksSlider.scrollLeft = scrollLeft - walk;
+    });
+    
+    // Touch events for mobile
+    worksSlider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX - worksSlider.offsetLeft;
+      scrollLeft = worksSlider.scrollLeft;
+    });
+    
+    worksSlider.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+    
+    worksSlider.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - worksSlider.offsetLeft;
+      const walk = (x - startX) * 2;
+      worksSlider.scrollLeft = scrollLeft - walk;
+    });
+  }
+
   // ========== МОДАЛКА ==========
   const modal = document.getElementById('requestModal');
   const modalOpenBtns = document.querySelectorAll('[data-open-modal]');

@@ -1249,13 +1249,22 @@ ol {
 }
 
 .work-item__img {
-    min-height: 210px;
+    aspect-ratio: 4 / 5;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #eef2f2;
+    overflow: hidden;
     color: var(--accent-primary);
     font-size: 18px;
     font-weight: 600;
+}
+
+.work-item__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .work-item p {
@@ -1269,6 +1278,185 @@ ol {
 .works-more {
     margin-top: 20px;
     text-align: center;
+}
+
+/* =========================
+   WORKS SLIDER
+========================= */
+.works-slider-wrapper {
+  position: relative;
+  padding: 0 10px;
+}
+
+.works-slider {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 8px 0 20px;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.works-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.works-slider.dragging {
+  scroll-behavior: auto;
+  cursor: grabbing;
+}
+
+.work-slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: calc(33.333% - 13.33px);
+  min-width: 280px;
+}
+
+.work-item {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.work-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.work-item__img {
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f2;
+  overflow: hidden;
+}
+
+.work-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.work-item:hover .work-item__img img {
+  transform: scale(1.03);
+}
+
+.work-item p {
+  margin: 0;
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* Стрелки навигации для слайдера работ */
+.works-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accent-primary);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.works-slider-arrow:hover {
+  background: var(--accent-primary);
+  color: var(--white);
+  border-color: var(--accent-primary);
+}
+
+@media (min-width: 1025px) {
+  .works-slider-wrapper:hover .works-slider-arrow {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.works-slider-arrow--prev {
+  left: -20px;
+}
+
+.works-slider-arrow--next {
+  right: -20px;
+}
+
+/* Пагинация для слайдера работ */
+.works-slider-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.works-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border-light);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.works-slider-dot.active {
+  width: 24px;
+  background: var(--accent-primary);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 1024px) {
+  .work-slide {
+    width: calc(50% - 10px);
+    min-width: 260px;
+  }
+  
+  .works-slider-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .works-slider-wrapper {
+    padding: 0;
+  }
+  
+  .work-slide {
+    width: 85%;
+    min-width: 270px;
+  }
+  
+  .works-slider {
+    gap: 16px;
+  }
 }
 
 /* =========================  ABOUT ========================= */
