@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Мастер электрик в Москве — Константин Артамонов</title>
+
+    <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+  <link rel="manifest" href="./favicons/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="./favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Основной шрифт Inter (современный гротеск) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Шапка сайта (1) -->
+  <header class="header">
+    <div class="container header__container">
+      <!-- Лого / текстовый логотип слева -->
+      <div class="header__logo">
+        <span class="header__name">Константин Артамонов</span>
+        <span class="header__badge">Мастер электрик</span>
+      </div>
+      
+      <!-- Меню по якорям (десктоп) -->
+      <nav class="header__nav" aria-label="Основное меню">
+        <ul class="header__menu">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#works">Работы</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Телефон + Телеграм (справа) -->
+      <div class="header__contact">
+        <a href="tel:+79167190008" class="header__phone">+7 (916) 719-00-08</a>
+        <a href="https://t.me/Artamonov_Konstantin?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта" 
+           class="header__telegram" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Написать в Telegram">
+          <!-- SVG иконка Telegram -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.66-.35-1.02.22-1.61.15-.15 2.72-2.48 2.77-2.69.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.22-.02-.1.02-1.6 1.02-4.52 2.98-.43.3-.82.44-1.17.43-.38 0-1.12-.22-1.67-.4-.67-.22-1.2-.33-1.16-.7.02-.19.29-.39.79-.59 3.12-1.36 5.2-2.25 6.25-2.68 2.97-1.24 3.59-1.45 3.99-1.46.09 0 .28.02.41.12.11.09.14.21.15.3.01.06.02.22 0 .34z" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Мобильное меню (бургер) - упрощённо через скрытый чекбокс, но JS управляет -->
+      <button class="header__burger" id="burgerBtn" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Мобильная панель меню -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu__list">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#works">Работы</a></li>
+        <li><a href="#prices">Цены</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <div class="mobile-menu__contact">
+        <a href="tel:+79167190008" class="mobile-menu__phone">+7 (916) 719-00-08</a>
+        <a href="https://t.me/Artamonov_Konstantin?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта" 
+          class="btn btn--primary btn--full" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.66-.35-1.02.22-1.61.15-.15 2.72-2.48 2.77-2.69.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.22-.02-.1.02-1.6 1.02-4.52 2.98-.43.3-.82.44-1.17.43-.38 0-1.12-.22-1.67-.4-.67-.22-1.2-.33-1.16-.7.02-.19.29-.39.79-.59 3.12-1.36 5.2-2.25 6.25-2.68 2.97-1.24 3.59-1.45 3.99-1.46.09 0 .28.02.41.12.11.09.14.21.15.3.01.06.02.22 0 .34z" fill="currentColor"/>
+          </svg>
+          Написать в Telegram
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Первый экран (2) -->
+    <section class="hero" id="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            <span class="hero__title-accent">Константин Артамонов</span><br>
+            Мастер электрик в Москве
+          </h1>
+          <p class="hero__subtitle">
+            Ремонт и монтаж электрики под ключ. Работаю лично, без посредников и скрытых доплат.
+          </p>
+          <!-- 3 преимущества -->
+          <ul class="hero__features">
+            <li class="hero__feature">
+                <span class="hero__feature-icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="10" fill="currentColor"/>
+                        <path d="M6 10.2L8.6 12.8L14 7.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="hero__feature-text">Цена понятна до начала работ</span>
+            </li>
+
+            <li class="hero__feature">
+                <span class="hero__feature-icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="10" fill="currentColor"/>
+                        <path d="M6 10.2L8.6 12.8L14 7.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="hero__feature-text">10 лет опыта</span>
+            </li>
+
+            <li class="hero__feature">
+                <span class="hero__feature-icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="10" fill="currentColor"/>
+                        <path d="M6 10.2L8.6 12.8L14 7.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+              <span class="hero__feature-text">Без срывов и опозданий</span>
+            </li>
+        </ul>
+          
+          <!-- 2 кнопки -->
+          <div class="hero__buttons">
+            <a href="#works" class="btn btn--primary">Посмотреть портфолио</a>
+            <a href="tel:+79167190008" class="btn btn--outline">Позвонить</a>
+          </div>
+        </div>
+        
+        <!-- Фото мастера или фото реальной работы -->
+        <div class="hero__media">
+          <div class="hero__image-wrapper">
+            <img src="./img/hero.jpg" alt="Константин Артамонов — мастер электрик">
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Блок преимуществ (3) - СЛАЙДЕР -->
+    <section class="features-quick">
+      <div class="container">
+        <h2 class="section-title">Почему со мной удобно работать</h2>
+
+        <!-- Обёртка слайдера -->
+        <div class="features-slider-wrapper">
+          <div class="features-grid features-slider" id="featuresSlider">
+            
+            <!-- Слайд 1 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3L4 7V12C4 16.5 7 20.74 12 22C17 20.74 20 16.5 20 12V7L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">Без посредников</h3>
+                <p class="feature-card__text">Вы не переплачиваете за наценку компании.</p>
+              </article>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">Быстрый выезд</h3>
+                <p class="feature-card__text">Оперативно приезжаю по Москве и области.</p>
+              </article>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 7V6C9 5.45 9.45 5 10 5H14C14.55 5 15 5.45 15 6V7"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 9C4 8.45 4.45 8 5 8H19C19.55 8 20 8.45 20 9V17C20 17.55 19.55 18 19 18H5C4.45 18 4 17.55 4 17V9Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M4 12H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">5000+ объектов</h3>
+                <p class="feature-card__text">Большой практический опыт в ремонте и монтаже электрики.</p>
+              </article>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 18L4 20V7C4 6.45 4.45 6 5 6H19C19.55 6 20 6.45 20 7V17C20 17.55 19.55 18 19 18H7Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 11H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M8 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">Без языковых барьеров</h3>
+                <p class="feature-card__text">Вы легко сможете объяснить свою задачу по телефону.</p>
+              </article>
+            </div>
+
+            <!-- Слайд 5 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M8 8H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M8 12H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M8 16H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M15.5 15.5L18.5 18.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <circle cx="14" cy="14" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">Понимаю не только монтаж, но и проектирование</h3>
+                <p class="feature-card__text">Помогаю продумать линии, нагрузки и общую логику электрики.</p>
+              </article>
+            </div>
+
+            <!-- Слайд 6 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4 20H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M6 16L16.5 5.5C17.05 4.95 17.95 4.95 18.5 5.5L18.5 5.5C19.05 6.05 19.05 6.95 18.5 7.5L8 18H6V16Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    <path d="M9 18V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M12 18V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M15 18V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">Аккуратный подход к работе</h3>
+                <p class="feature-card__text">Стараюсь делать так, чтобы после меня не приходилось ничего переделывать.</p>
+              </article>
+            </div>
+
+            <!-- Слайд 7 -->
+            <div class="feature-slide">
+              <article class="feature-card">
+                <div class="feature-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M14.5 6.5A4 4 0 0 0 9 11L4 16V20H8L13 15A4 4 0 0 0 17.5 9.5L15 12L12 9L14.5 6.5Z"
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3 class="feature-card__title">Работаю с профессиональным инструментом</h3>
+                <p class="feature-card__text">Приезжаю подготовленным, чтобы выполнять работу точно и без лишней суеты.</p>
+              </article>
+            </div>
+
+          </div>
+          
+          <!-- Кнопки навигации -->
+          <button class="slider-arrow slider-arrow--prev" id="sliderPrev" aria-label="Предыдущий слайд">←</button>
+          <button class="slider-arrow slider-arrow--next" id="sliderNext" aria-label="Следующий слайд">→</button>
+        </div>
+
+        <!-- Точки пагинации -->
+        <div class="slider-pagination" id="sliderPagination"></div>
+      </div>
+    </section>
+
+    <!-- Блок «Услуги» (4) -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Услуги</h2>
+        <p class="section-subtitle">Выполняю как отдельные работы, так и комплексные электромонтажные проекты.</p>
+    
+        <div class="services-grid">
+      
+          <!-- Карточка 1 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/service-1.jpg');">
+              <!-- Место для вашего фото -->
+            </div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Электрика под ключ</h3>
+              <!-- При желании можно добавить ссылку -->
+              <!-- <span class="service-card__link">Подробнее →</span> -->
+            </div>
+          </div>
+      
+          <!-- Карточка 2 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/service-2.jpg');">
+              <!-- Место для вашего фото -->
+            </div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Проектирование электромонтажа</h3>
+            </div>
+          </div>
+      
+          <!-- Карточка 3 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/service-3.jpg');">
+              <!-- Место для вашего фото -->
+            </div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Проектирование электрощитов</h3>
+            </div>
+          </div>
+      
+          <!-- Карточка 4 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/service-4.jpg');">
+              <!-- Место для вашего фото -->
+            </div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Проектирование и монтаж электрики</h3>
+            </div>
+          </div>
+      
+          <!-- Карточка 5 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/service-5.jpg');">
+              <!-- Место для вашего фото -->
+            </div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Мелкие электромонтажные работы</h3>
+            </div>
+          </div>
+      
+          <!-- Карточка 6 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/service-6.jpg');">
+              <!-- Место для вашего фото -->
+            </div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Устранение аварий и неисправностей</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Как проходит работа» (7) -->
+    <section class="steps">
+      <div class="container">
+        <h2 class="section-title">Как проходит работа</h2>
+        <div class="steps-list">
+          <div class="step">
+            <div class="step__number">1</div>
+            <h3>Вы оставляете заявку</h3>
+            <p>По телефону или через мессенджер.</p>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <h3>Уточняю задачу</h3>
+            <p>Понимаю объём работ, тип объекта, сроки и особенности.</p>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <h3>Согласовываем выезд и стоимость</h3>
+            <p>Обсуждаем удобное время и предварительную цену.</p>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <h3>Выполняю работы</h3>
+            <p>Аккуратно, с нужным инструментом и с понятным процессом.</p>
+          </div>
+          <div class="step">
+            <div class="step__number">5</div>
+            <h3>Проверяем результат</h3>
+            <p>Показываю выполненную работу, отвечаю на вопросы, при необходимости даю рекомендации.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Примеры работ» (8) -->
+    <section class="works" id="works">
+      <div class="container">
+        <h2 class="section-title">Примеры выполненных работ</h2>
+        <p class="section-subtitle">Реальные объекты и выполненные задачи.</p>
+        
+        <div class="works-gallery">
+          <div class="work-item">
+            <div class="work-item__img" style="background: #d9d9d9;"><span>📸 Фото 1</span></div>
+            <p>Электрика под ключ в квартире</p>
+          </div>
+          <div class="work-item">
+            <div class="work-item__img" style="background: #d0d5dd;"><span>📸 Фото 2</span></div>
+            <p>Сборка и проектирование электрощита</p>
+          </div>
+          <div class="work-item">
+            <div class="work-item__img" style="background: #cbd5e1;"><span>📸 Фото 3</span></div>
+            <p>Монтаж освещения в жилом помещении</p>
+          </div>
+          <div class="work-item">
+            <div class="work-item__img" style="background: #b9c7d9;"><span>📸 Фото 4</span></div>
+            <p>Замена и перенос розеточной группы</p>
+          </div>
+          <div class="work-item">
+            <div class="work-item__img" style="background: #a5b9ce;"><span>📸 Фото 5</span></div>
+            <p>Подключение варочной панели</p>
+          </div>
+          <div class="work-item">
+            <div class="work-item__img" style="background: #94a3b8;"><span>📸 Фото 6</span></div>
+            <p>Устранение неисправности и восстановление линии</p>
+          </div>
+        </div>
+        
+        <div class="works-more">
+          <button class="btn btn--outline">Смотреть больше работ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «О мастере» (9) -->
+    <section class="about">
+      <div class="container about__container">
+        <div class="about__photo">
+          <div class="about__photo-placeholder">👤 Фото Константина</div>
+        </div>
+        <div class="about__content">
+          <h2 class="section-title">О мастере</h2>
+          <p class="about__desc">Работаю в сфере электромонтажа более 10 лет. Беру в работу как небольшие бытовые задачи, так и сложные технические проекты: электрика под ключ, проектирование щитов, расчёт нагрузок, монтаж освещения. Для меня важны понятный подход, аккуратность в работе и предсказуемость для клиента — по срокам, по процессу и по стоимости.</p>
+          <ul class="about__facts">
+            <li><strong>10 лет опыта</strong></li>
+            <li><strong>Москва, приоритетно ЗАО</strong></li>
+            <li><strong>Новостройки, вторички, частные и коммерческие объекты</strong></li>
+            <li><strong>Монтаж, ремонт и проектирование</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок с ценами -->
+    <section class="prices" id="prices">
+      <div class="container">
+        <h2 class="section-title">Цены на основные работы</h2>
+        <p class="section-subtitle">
+          Указаны ориентировочные цены на популярные услуги. Точная стоимость зависит от объёма работ, состояния проводки и особенностей объекта.
+        </p>
+
+        <div class="price-table price-table--detailed">
+          <div class="price-row price-row--head">
+            <span>Название услуги</span>
+            <span>Стоимость</span>
+            <span>Ед. изм.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Срочный выезд электрика</span>
+            <span>от 2000 ₽</span>
+            <span>выезд</span>
+          </div>
+
+          <div class="price-row">
+            <span>Замена / установка розетки</span>
+            <span>от 500 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Замена / установка выключателя</span>
+            <span>от 500 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Ремонт розетки</span>
+            <span>от 450 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Монтаж люстры</span>
+            <span>от 1000 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Установка светильника</span>
+            <span>от 800 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Подключение варочной панели</span>
+            <span>от 1500 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Диагностика неисправности</span>
+            <span>от 1000 ₽</span>
+            <span>услуга</span>
+          </div>
+
+          <div class="price-row">
+            <span>Устранение аварии</span>
+            <span>от 2000 ₽</span>
+            <span>услуга</span>
+          </div>
+
+          <div class="price-row">
+            <span>Ремонт электрики</span>
+            <span>от 2000 ₽</span>
+            <span>услуга</span>
+          </div>
+
+          <div class="price-row">
+            <span>Штробление стен под проводку</span>
+            <span>от 300 ₽</span>
+            <span>пог. м</span>
+          </div>
+
+          <div class="price-row">
+            <span>Штробление подрозетника</span>
+            <span>от 300 ₽</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Проектирование электрощита</span>
+            <span>от 5000 ₽</span>
+            <span>услуга</span>
+          </div>
+
+          <div class="price-row">
+            <span>Сборка электрощита</span>
+            <span>по запросу</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Замена автомата</span>
+            <span>от 1500</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+           <span>Установка автомата</span>
+            <span>от 1500</span>
+            <span>шт.</span>
+          </div>
+
+          <div class="price-row">
+            <span>Монтаж электроснабжения</span>
+            <span>от 1000 ₽</span>
+            <span>пог. м</span>
+          </div>
+        </div>
+
+        <p class="prices__note">
+          * Точная стоимость зависит от объёма работ, состояния проводки, количества точек и особенностей объекта. До начала работ стоимость согласовывается заранее.
+        </p>
+      </div>
+    </section>
+
+    <!-- Блок с отзывами (11) -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <h2 class="section-title">Отзывы клиентов</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-card__author">Сергей Панюков</div>
+        <div class="review-card__rating">
+          <span class="review-card__stars">★★★★★</span>
+          <span class="review-card__score">5.0</span>
+        </div>
+        <p>Обращался к Константину с довольно сложным заказом – перепланировка расположения электроточек в квартире. Справился на отлично! Все четко, по плану, с учетом всех моих пожеланий. Мастер своего дела!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__author">Анастасия Черемных</div>
+        <div class="review-card__rating">
+          <span class="review-card__stars">★★★★★</span>
+          <span class="review-card__score">5.0</span>
+        </div>
+        <p>Мастер подключил всю электротехнику быстро и качественно. Работает всё отлично! Очень довольна его профессионализмом и аккуратностью. Рекомендую!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-card__author">Милана*</div>
+        <div class="review-card__rating">
+          <span class="review-card__stars">★★★★★</span>
+          <span class="review-card__score">5.0</span>
+        </div>
+        <p>Собрал и спроектировал электрощит идеально! Профессионализм, аккуратность, внимание к деталям — всё на высшем уровне. Очень довольна, рекомендую!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Блок FAQ (12) -->
+    <section class="faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-list" id="faqList">
+      
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Точно приедет тот мастер, с которым я созванивался?
+        </button>
+        <div class="faq-answer">
+          Да, на заказ приезжаю лично я. Вы заранее знаете, кто приедет, и договариваетесь напрямую.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Вы частный мастер или компания?
+        </button>
+        <div class="faq-answer">
+          Я работаю как частный мастер напрямую с заказчиками, без диспетчеров, посредников и наценок от фирмы.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          У вас есть весь необходимый инструмент?
+        </button>
+        <div class="faq-answer">
+          Да, я приезжаю со всем необходимым профессиональным инструментом и качественными расходниками.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Вы точно приедет в назначенное время?
+        </button>
+        <div class="faq-answer">
+          Да, если мы согласовали выезд, я приезжаю на объект в оговорённое время. Если возникает задержка, вы заранее получаете звонок или сообщение.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Что если вы опоздаете?
+        </button>
+        <div class="faq-answer">
+          Если по дороге возникнет задержка из-за пробок или предыдущего заказа, я обязательно предупреждаю заранее и согласовываю новое время прибытия.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Вы точно профессиональный электрик?
+        </button>
+        <div class="faq-answer">
+          Да, я профессиональный мастер с практическим опытом в электрике.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Сколько будет стоить работа? Цена не изменится после выполнения?
+        </button>
+        <div class="faq-answer">
+          Стоимость основных работ обсуждается заранее до начала выполнения. Если в процессе выявляются скрытые неисправности или дополнительные задачи, они отдельно согласовываются с вами до начала дополнительных работ.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          А если после ремонта что-то перестанет работать?
+        </button>
+        <div class="faq-answer">
+          На выполненные работы предоставляется гарантия. Если по выполненной услуге возникнет неисправность, я обязательно приеду и всё исправлю.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Сколько ждать мастера по Москве?
+        </button>
+        <div class="faq-answer">
+          Я выезжаю только в легкодоступные для меня районы, что позволяет мне мобильно передвигаться между объектами. При звонке мы сразу обсуждаем время прибытия.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Финальный призыв к заявке (13) + контакты (14) объединены -->
+<section class="cta-contact" id="contacts">
+  <div class="container">
+    <div class="cta-block">
+      <h2 class="section-title">Остались вопросы?<br>Готовы вызвать мастера?</h2>
+      <p>Позвоните или напишите в Telegram — отвечаю лично и быстро.</p>
+
+      <div class="cta-buttons">
+        <a href="https://t.me/Artamonov_Konstantin?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта"
+           class="btn btn--primary btn--large btn--telegram"
+           target="_blank"
+           rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.66-.35-1.02.22-1.61.15-.15 2.72-2.48 2.77-2.69.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.22-.02-.1.02-1.6 1.02-4.52 2.98-.43.3-.82.44-1.17.43-.38 0-1.12-.22-1.67-.4-.67-.22-1.2-.33-1.16-.7.02-.19.29-.39.79-.59 3.12-1.36 5.2-2.25 6.25-2.68 2.97-1.24 3.59-1.45 3.99-1.46.09 0 .28.02.41.12.11.09.14.21.15.3.01.06.02.22 0 .34z" fill="currentColor"/>
+          </svg>
+          Написать в Telegram
+        </a>
+
+        <a href="tel:+79167190008" class="btn btn--outline btn--large">
+          +7 (916) 719-00-08
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-details">
+      <div class="contact-info">
+        <h3>Контакты</h3>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Телефон</span>
+            <a href="tel:+79167190008">+7 (916) 719-00-08</a>
+          </li>
+
+          <li>
+            <span class="contact-label">Telegram</span>
+            <a href="https://t.me/Artamonov_Konstantin" target="_blank" rel="noopener noreferrer">
+              @Artamonov_Konstantin
+            </a>
+          </li>
+
+          <li>
+            <span class="contact-label">WhatsApp</span>
+            <a href="https://wa.me/79167190008" target="_blank" rel="noopener noreferrer">
+              +7 (916) 719-00-08
+            </a>
+          </li>
+
+          <li>
+            <span class="contact-label">Группа в Telegram</span>
+            <a href="https://t.me/MasterElektrikMSK" target="_blank" rel="noopener noreferrer">
+              t.me/MasterElektrikMSK
+            </a>
+          </li>
+
+          <li>
+            <span class="contact-label">География работы</span>
+            <span>Москва, приоритетно ЗАО</span>
+          </li>
+
+          <li>
+            <span class="contact-label">Время связи</span>
+            <span>Ежедневно, с 8:00 до 21:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-map">
+        <iframe
+          class="contact-map-frame"
+          src="https://yandex.ru/map-widget/v1/?ll=37.533432%2C55.720568&z=10.4"
+          allowfullscreen="true"
+          loading="lazy"
+          title="Карта зоны выезда по Москве, ЗАО">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Подвал сайта (15) -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <div class="footer__title">Мастер электрик в Москве</div>
+        <p>Монтаж, ремонт и проектирование электрики</p>
+        <p class="footer__phone">Телефон: <a href="tel:+79167190008">+7 (916) 719-00-08</a></p>
+      </div>
+      
+      <div class="footer__links">
+        <a href="#services">Услуги</a>
+        <a href="#works">Работы</a>
+        <a href="#prices">Цены</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+      
+      <div class="footer__copy">
+        © 2026. Все права защищены
+      </div>
+    </div>
+  </footer>
+
+  <!-- Модальное окно (форма заявки) -->
+  <div class="modal" id="requestModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="closeModalBtn" aria-label="Закрыть">&times;</button>
+      <h3 class="modal__title">Оставить заявку</h3>
+      <p>Оставьте номер телефона, и я перезвоню в ближайшее время.</p>
+      <form class="modal__form" id="requestForm">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <textarea name="message" placeholder="Комментарий (необязательно)" rows="3"></textarea>
+        <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+        <p class="modal__privacy">Нажимая, вы соглашаетесь с политикой конфиденциальности.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
