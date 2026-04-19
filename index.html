@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.v1.css">
+  <link rel="stylesheet" href="style.v2.css">
 </head>
 <body>
   <!-- Шапка сайта (1) -->
@@ -27,7 +27,7 @@
       <!-- Лого / текстовый логотип слева -->
       <div class="header__logo">
         <span class="header__name">Константин Артамонов</span>
-        <span class="header__badge">Мастер электрик</span>
+        <span class="header__badge">Профессиональный электромонтаж в Москве</span>
       </div>
       
       <!-- Меню по якорям (десктоп) -->
@@ -55,6 +55,18 @@
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.66-.35-1.02.22-1.61.15-.15 2.72-2.48 2.77-2.69.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.22-.02-.1.02-1.6 1.02-4.52 2.98-.43.3-.82.44-1.17.43-.38 0-1.12-.22-1.67-.4-.67-.22-1.2-.33-1.16-.7.02-.19.29-.39.79-.59 3.12-1.36 5.2-2.25 6.25-2.68 2.97-1.24 3.59-1.45 3.99-1.46.09 0 .28.02.41.12.11.09.14.21.15.3.01.06.02.22 0 .34z" fill="currentColor"/>
           </svg>
         </a>
+
+        <!-- Max (новый) -->
+        <a href="https://max.ru/u/f9LHodD0cOIJcEudh8kmrpd-hKjxUu2my8db2hymcQllEJPMkHy9cI-qEUM?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта" 
+          class="header__telegram header__max" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="Написать в Max">
+          <svg class="header__max-icon" width="24" height="24" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z" fill="currentColor"/>
+          </svg>
+        </a>
+
       </div>
       
       <!-- Мобильное меню (бургер) - упрощённо через скрытый чекбокс, но JS управляет -->
@@ -94,10 +106,10 @@
         <div class="hero__content">
           <h1 class="hero__title">
             <span class="hero__title-accent">Константин Артамонов</span><br>
-            Мастер электрик в Москве
+            Мастер электрик
           </h1>
           <p class="hero__subtitle">
-            Ремонт и монтаж электрики под ключ. Работаю лично, без посредников и скрытых доплат.
+            Частный мастер, подхожу к работе ответсвенно и профессионально
           </p>
           <!-- 3 преимущества -->
           <ul class="hero__features">
@@ -108,7 +120,7 @@
                         <path d="M6 10.2L8.6 12.8L14 7.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-                <span class="hero__feature-text">Цена понятна до начала работ</span>
+                <span class="hero__feature-text">Цена заранее согласовна</span>
             </li>
 
             <li class="hero__feature">
@@ -128,7 +140,7 @@
                         <path d="M6 10.2L8.6 12.8L14 7.4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-              <span class="hero__feature-text">Без срывов и опозданий</span>
+              <span class="hero__feature-text">Не срываю встречи и сроки</span>
             </li>
         </ul>
           
@@ -197,24 +209,8 @@
                     <path d="M4 12H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                   </svg>
                 </div>
-                <h3 class="feature-card__title">5000+ объектов</h3>
+                <h3 class="feature-card__title">2500+ объектов</h3>
                 <p class="feature-card__text">Большой практический опыт в ремонте и монтаже электрики.</p>
-              </article>
-            </div>
-
-            <!-- Слайд 4 -->
-            <div class="feature-slide">
-              <article class="feature-card">
-                <div class="feature-card__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M7 18L4 20V7C4 6.45 4.45 6 5 6H19C19.55 6 20 6.45 20 7V17C20 17.55 19.55 18 19 18H7Z"
-                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 11H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                    <path d="M8 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <h3 class="feature-card__title">Без языковых барьеров</h3>
-                <p class="feature-card__text">Вы легко сможете объяснить свою задачу по телефону.</p>
               </article>
             </div>
 
@@ -231,8 +227,8 @@
                     <circle cx="14" cy="14" r="2.5" stroke="currentColor" stroke-width="1.8"/>
                   </svg>
                 </div>
-                <h3 class="feature-card__title">Понимаю не только монтаж, но и проектирование</h3>
-                <p class="feature-card__text">Помогаю продумать линии, нагрузки и общую логику электрики.</p>
+                <h3 class="feature-card__title">Понимаю техническую логику проекта</h3>
+                <p class="feature-card__text">Смотрю не только на отдельную задачу, но и на то, как она повлияет на всю систему: нагрузки, линии, щит и дальнейшую эксплуатацию.</p>
               </article>
             </div>
 
@@ -250,7 +246,7 @@
                   </svg>
                 </div>
                 <h3 class="feature-card__title">Аккуратный подход к работе</h3>
-                <p class="feature-card__text">Стараюсь делать так, чтобы после меня не приходилось ничего переделывать.</p>
+                <p class="feature-card__text">Бережно отношусь к помещению, после себя оставляю порядок.</p>
               </article>
             </div>
 
@@ -263,8 +259,8 @@
                       stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <h3 class="feature-card__title">Работаю с профессиональным инструментом</h3>
-                <p class="feature-card__text">Приезжаю подготовленным, чтобы выполнять работу точно и без лишней суеты.</p>
+                <h3 class="feature-card__title">Приезжаю со своим инструментом</h3>
+                <p class="feature-card__text">У меня в наличии весь необходимый профессиональный инструмент</p>
               </article>
             </div>
 
@@ -281,35 +277,34 @@
     </section>
 
     <!-- Блок «Услуги» (4) -->
-    <!-- Блок «Услуги» (4) -->
-<section class="services" id="services">
-  <div class="container">
-    <h2 class="section-title">Услуги</h2>
-    <p class="section-subtitle">Выполняю как отдельные работы, так и комплексные электромонтажные проекты.</p>
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Услуги</h2>
+          <p class="section-subtitle">Выполняю как отдельные работы, так и комплексные электромонтажные проекты.</p>
 
-    <div class="services-grid">
+        <div class="services-grid">
 
-      <!-- Карточка 1 -->
-      <div class="service-card">
-        <div class="service-card__bg" style="background-image: url('img/SERVICES_1.webp');"></div>
-        <div class="service-card__overlay"></div>
-        <div class="service-card__content">
-          <h3 class="service-card__title">Электрика под ключ</h3>
-        </div>
-      </div>
+          <!-- Карточка 1 -->
+          <div class="service-card">
+            <div class="service-card__bg" style="background-image: url('img/SERVICES_1.webp');"></div>
+            <div class="service-card__overlay"></div>
+            <div class="service-card__content">
+              <h3 class="service-card__title">Электрика под ключ</h3>
+            </div>
+          </div>
 
       <!-- Карточка 2 -->
       <div class="service-card">
         <div class="service-card__bg" style="background-image: url('img/SERVICES_2.webp');"></div>
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
-          <h3 class="service-card__title">Проектирование электромонтажа</h3>
+          <h3 class="service-card__title">Проектирование электроснабжения</h3>
         </div>
       </div>
 
       <!-- Карточка 3 -->
       <div class="service-card">
-        <div class="service-card__bg" style="background-image: url('img/SERVICES_3.webp');"></div>
+        <div class="service-card__bg" style="background-image: url('img/SERVICES_3v1.webp');"></div>
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
           <h3 class="service-card__title">Проектирование электрощитов</h3>
@@ -321,7 +316,7 @@
         <div class="service-card__bg" style="background-image: url('img/SERVICES_5.webp');"></div>
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
-          <h3 class="service-card__title">Проектирование и монтаж электрики</h3>
+          <h3 class="service-card__title">Проектирование и монтаж освещения</h3>
         </div>
       </div>
 
@@ -330,13 +325,13 @@
         <div class="service-card__bg" style="background-image: url('img/SERVICES_4.webp');"></div>
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
-          <h3 class="service-card__title">Мелкие электромонтажные работы</h3>
+          <h3 class="service-card__title">Мелкие работы по электрике</h3>
         </div>
       </div>
 
       <!-- Карточка 6 -->
       <div class="service-card">
-        <div class="service-card__bg" style="background-image: url('img/SERVICES_6.webp');"></div>
+        <div class="service-card__bg" style="background-image: url('img/SERVICES_6v1.webp');"></div>
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
           <h3 class="service-card__title">Устранение аварий и неисправностей</h3>
@@ -345,6 +340,23 @@
     </div>
   </div>
 </section>
+
+    <!-- CTA: Вызвать электрика (после блока Услуги) -->
+    <section class="cta-intermediate">
+      <div class="container">
+        <div class="cta-intermediate__card">
+          <div class="cta-intermediate__content">
+            <h3 class="cta-intermediate__title">Вызвать электрика</h3>
+            <p class="cta-intermediate__text">Нужна помощь с электрикой? Позвоните — приеду, разберусь, сделаю аккуратно.</p>
+          </div>
+          <div class="cta-intermediate__action">
+            <a href="tel:+79167190008" class="btn btn--primary btn--large">
+              +7 (916) 719-00-08
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Блок «Как проходит работа» (7) -->
     <section class="steps">
@@ -381,7 +393,6 @@
     </section>
 
     <!-- Блок «Примеры работ» (8) -->
-    <!-- Блок «Примеры работ» (8) - СЛАЙДЕР -->
 <section class="works" id="works">
   <div class="container">
     <h2 class="section-title">Примеры выполненных работ</h2>
@@ -395,9 +406,9 @@
         <div class="work-slide">
           <div class="work-item">
             <div class="work-item__img">
-              <img src="./img/works_1.webp" alt="Электрика под ключ в квартире">
+              <img src="./img/works_1.webp" alt="Прокладка кабелей">
             </div>
-            <p>Электрика под ключ в квартире</p>
+            <p>Прокладка кабелей</p>
           </div>
         </div>
 
@@ -405,9 +416,9 @@
         <div class="work-slide">
           <div class="work-item">
             <div class="work-item__img">
-              <img src="./img/works_2.webp" alt="Сборка и проектирование электрощита">
+              <img src="./img/works_2v1.webp" alt="Сборка и проектирование электрощита">
             </div>
-            <p>Сборка и проектирование электрощита</p>
+            <p>Сборка электрощита</p>
           </div>
         </div>
 
@@ -427,7 +438,7 @@
             <div class="work-item__img">
               <img src="./img/works_4.webp" alt="Замена и перенос розеточной группы">
             </div>
-            <p>Замена и перенос розеточной группы</p>
+            <p>Разводка электрики</p>
           </div>
         </div>
 
@@ -437,7 +448,7 @@
             <div class="work-item__img">
               <img src="./img/works_5.webp" alt="Подключение варочной панели">
             </div>
-            <p>Монтаж освещения</p>
+            <p>Монтаж трековых светильников и бра</p>
           </div>
         </div>
 
@@ -447,7 +458,7 @@
             <div class="work-item__img">
               <img src="./img/works_6.webp" alt="Устранение неисправности и восстановление линии">
             </div>
-            <p>Устранение неисправности и восстановление линии</p>
+            <p>Штробление стен под проводку</p>
           </div>
         </div>
 
@@ -455,18 +466,18 @@
         <div class="work-slide">
           <div class="work-item">
             <div class="work-item__img">
-              <img src="./img/works_1.webp" alt="Электрика под ключ в квартире">
+              <img src="./img/works_7.webp" alt="Электромонта в частном доме">
             </div>
-            <p>Электрика под ключ в квартире</p>
+            <p>Электромонтаж в частном доме</p>
           </div>
         </div>
 
         <div class="work-slide">
           <div class="work-item">
             <div class="work-item__img">
-              <img src="./img/works_2.webp" alt="Сборка и проектирование электрощита">
+              <img src="./img/works_8.webp" alt="Установка розеточной группы">
             </div>
-            <p>Сборка и проектирование электрощита</p>
+            <p>Установка розеточной группы</p>
           </div>
         </div>
 
@@ -479,9 +490,25 @@
 
     <!-- Пагинация (точки) -->
     <div class="works-slider-pagination" id="worksSliderPagination"></div>
-
   </div>
 </section>
+
+    <!-- CTA: Обсудить задачу (после блока Примеры работ) -->
+    <section class="cta-intermediate">
+      <div class="container">
+        <div class="cta-intermediate__card">
+          <div class="cta-intermediate__content">
+            <h3 class="cta-intermediate__title">Обсудить задачу</h3>
+            <p class="cta-intermediate__text">Расскажите, что нужно сделать — согласуем детали, сроки и цену до выезда.</p>
+          </div>
+          <div class="cta-intermediate__action">
+            <a href="tel:+79167190008" class="btn btn--primary btn--large">
+              +7 (916) 719-00-08
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Блок «О мастере» (9) -->
     <section class="about">
@@ -626,6 +653,23 @@
       </div>
     </section>
 
+    <!-- CTA: Уточнить стоимость (после блока Цены) -->
+    <section class="cta-intermediate">
+      <div class="container">
+        <div class="cta-intermediate__card">
+          <div class="cta-intermediate__content">
+            <h3 class="cta-intermediate__title">Уточнить стоимость</h3>
+            <p class="cta-intermediate__text">Цены в таблице ориентировочные. Позвоните — рассчитаю точную сумму под вашу задачу.</p>
+          </div>
+          <div class="cta-intermediate__action">
+            <a href="tel:+79167190008" class="btn btn--primary btn--large">
+              +7 (916) 719-00-08
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Блок с отзывами (11) -->
 <section class="reviews" id="reviews">
   <div class="container">
@@ -660,6 +704,26 @@
     </div>
   </div>
 </section>
+
+    <!-- CTA: Больше отзывов на Яндекс Исполнителях (после блока Отзывы) -->
+    <section class="cta-intermediate">
+      <div class="container">
+        <div class="cta-intermediate__card">
+          <div class="cta-intermediate__content">
+            <h3 class="cta-intermediate__title">Больше отзывов на Яндекс Исполнителях</h3>
+            <p class="cta-intermediate__text">Посмотрите реальные отзывы клиентов и мой рейтинг на проверенной платформе.</p>
+          </div>
+          <div class="cta-intermediate__action">
+            <a href="https://uslugi.yandex.ru/profile/KonstantinVladimirovichA-2473751" 
+               class="btn btn--primary btn--large" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              Посмотреть отзывы
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Блок FAQ (12) -->
     <section class="faq" id="faq">
@@ -753,84 +817,114 @@
 </section>
 
     <!-- Финальный призыв к заявке (13) + контакты (14) объединены -->
-<section class="cta-contact" id="contacts">
-  <div class="container">
-    <div class="cta-block">
-      <h2 class="section-title">Остались вопросы?<br>Готовы вызвать мастера?</h2>
-      <p>Позвоните или напишите в Telegram — отвечаю лично и быстро.</p>
+    <section class="cta-contact" id="contacts">
+      <div class="container">
+        <div class="cta-block">
+          <h2 class="section-title">Остались вопросы?<br>Готовы вызвать мастера?</h2>
+          <p>Позвоните или напишите в Telegram — отвечаю лично и быстро.</p>
 
-      <div class="cta-buttons">
-        <a href="https://t.me/Artamonov_Konstantin?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта"
-           class="btn btn--primary btn--large btn--telegram"
-           target="_blank"
-           rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.66-.35-1.02.22-1.61.15-.15 2.72-2.48 2.77-2.69.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.22-.02-.1.02-1.6 1.02-4.52 2.98-.43.3-.82.44-1.17.43-.38 0-1.12-.22-1.67-.4-.67-.22-1.2-.33-1.16-.7.02-.19.29-.39.79-.59 3.12-1.36 5.2-2.25 6.25-2.68 2.97-1.24 3.59-1.45 3.99-1.46.09 0 .28.02.41.12.11.09.14.21.15.3.01.06.02.22 0 .34z" fill="currentColor"/>
-          </svg>
-          Написать в Telegram
-        </a>
-
-        <a href="tel:+79167190008" class="btn btn--outline btn--large">
-          +7 (916) 719-00-08
-        </a>
-      </div>
-    </div>
-
-    <div class="contact-details">
-      <div class="contact-info">
-        <h3>Контакты</h3>
-
-        <ul class="contact-list">
-          <li>
-            <span class="contact-label">Телефон</span>
-            <a href="tel:+79167190008">+7 (916) 719-00-08</a>
-          </li>
-
-          <li>
-            <span class="contact-label">Telegram</span>
-            <a href="https://t.me/Artamonov_Konstantin" target="_blank" rel="noopener noreferrer">
-              @Artamonov_Konstantin
+          <div class="cta-buttons">
+            <a href="https://t.me/Artamonov_Konstantin?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта"
+              class="btn btn--primary btn--large btn--telegram"
+              target="_blank"
+              rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.66-.35-1.02.22-1.61.15-.15 2.72-2.48 2.77-2.69.01-.03.01-.14-.05-.2-.06-.06-.15-.04-.22-.02-.1.02-1.6 1.02-4.52 2.98-.43.3-.82.44-1.17.43-.38 0-1.12-.22-1.67-.4-.67-.22-1.2-.33-1.16-.7.02-.19.29-.39.79-.59 3.12-1.36 5.2-2.25 6.25-2.68 2.97-1.24 3.59-1.45 3.99-1.46.09 0 .28.02.41.12.11.09.14.21.15.3.01.06.02.22 0 .34z" fill="currentColor"/>
+              </svg>
+              Написать в Telegram
             </a>
-          </li>
 
-          <li>
-            <span class="contact-label">WhatsApp</span>
-            <a href="https://wa.me/79167190008" target="_blank" rel="noopener noreferrer">
+            <a href="tel:+79167190008" class="btn btn--outline btn--large">
               +7 (916) 719-00-08
             </a>
-          </li>
+          </div>
+        </div>
 
-          <li>
-            <span class="contact-label">Группа в Telegram</span>
-            <a href="https://t.me/MasterElektrikMSK" target="_blank" rel="noopener noreferrer">
-              t.me/MasterElektrikMSK
-            </a>
-          </li>
+        <div class="contact-details">
+          <div class="contact-info">
+            <h3>Контакты</h3>
 
-          <li>
-            <span class="contact-label">География работы</span>
-            <span>Москва, приоритетно ЗАО</span>
-          </li>
+            <ul class="contact-list">
+              <!-- 1. Телефон -->
+              <li>
+                <span class="contact-label">Телефон</span>
+                <a href="tel:+79167190008">+7 (916) 719-00-08</a>
+              </li>
 
-          <li>
-            <span class="contact-label">Время связи</span>
-            <span>Ежедневно, с 8:00 до 21:00</span>
-          </li>
-        </ul>
+              <!-- 2. Мах (личный мессенджер) -->
+              <li>
+                <span class="contact-label">Мах</span>
+                <a href="https://max.ru/u/f9LHodD0cOIJcEudh8kmrpd-hKjxUu2my8db2hymcQllEJPMkHy9cI-qEUM?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта" target="_blank" rel="noopener noreferrer">
+                  Написать в Max
+                </a>
+              </li>
+
+              <!-- 3. Telegram (личный) -->
+              <li>
+                <span class="contact-label">Telegram</span>
+                <a href="https://t.me/Artamonov_Konstantin?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта" target="_blank" rel="noopener noreferrer"></a>
+                  @Artamonov_Konstantin
+                </a>
+              </li>
+
+              <!-- 4. WhatsApp -->
+              <li>
+                <span class="contact-label">WhatsApp</span>
+                <a href="https://wa.me/79167190008?text=Здравствуйте%2C%20Константин%2C%20пишу%20вам%20с%20сайта" target="_blank" rel="noopener noreferrer"></a>
+                  +7 (916) 719-00-08
+                </a>
+              </li>
+
+              <!-- 5. Группа в Telegram -->
+              <li>
+                <span class="contact-label">Группа в Telegram</span>
+                <a href="https://t.me/MasterElektrikMSK" target="_blank" rel="noopener noreferrer">
+                  t.me/MasterElektrikMSK
+                </a>
+              </li>
+
+              <!-- 6. Группа в Мах -->
+              <li>
+                <span class="contact-label">Группа в Мах</span>
+                <a href="https://max.ru/join/12nnKX1uQUqUCcKqLP9ZfqBgNrUZPBDa0AqCr4f8YNg" target="_blank" rel="noopener noreferrer">
+                  Присоединиться в Max
+                </a>
+              </li>
+
+              <!-- 7. Яндекс Услуги -->
+              <li>
+                <span class="contact-label">Яндекс Исполнители</span>
+                <a href="https://uslugi.yandex.ru/profile/KonstantinVladimirovichA-2473751" target="_blank" rel="noopener noreferrer">
+                  Профиль на Яндекс.Исполнителях
+                </a>
+              </li>
+
+              <!-- 8. География работы -->
+              <li>
+                <span class="contact-label">География работы</span>
+                <span>Москва, приоритетно ЗАО</span>
+              </li>
+
+              <!-- 9. Время связи -->
+              <li>
+                <span class="contact-label">Время связи</span>
+                <span>Ежедневно, с 8:00 до 21:00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-map">
+            <iframe
+              class="contact-map-frame"
+              src="https://yandex.ru/map-widget/v1/?ll=37.533432%2C55.720568&z=10.4"
+              allowfullscreen="true"
+              loading="lazy"
+              title="Карта зоны выезда по Москве, ЗАО">
+            </iframe>
+          </div>
+        </div>
       </div>
-
-      <div class="contact-map">
-        <iframe
-          class="contact-map-frame"
-          src="https://yandex.ru/map-widget/v1/?ll=37.533432%2C55.720568&z=10.4"
-          allowfullscreen="true"
-          loading="lazy"
-          title="Карта зоны выезда по Москве, ЗАО">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
   <!-- Подвал сайта (15) -->
   <footer class="footer">
